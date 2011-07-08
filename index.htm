@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+		<title>drupal-theme.info | Drupal theme's .info file generator</title>
+    <meta name="title" content="drupal-theme.info | Drupal theme's .info file generator" />
+    <meta name="author" content="Sergio Cerrutti" />
+    <meta name="subject" content="Drupal" />
+    <meta name="description" content="Generate your theme.info for Drupal in few seconds!" />
+    <meta name="keywords" content="drupal, theme, .info, auto, generator, template" />
+    <meta name="language" content="english" />
+    <meta name="revisit" content="30 days" />
+    <meta name="distribution" content="global" />
+    <meta name="robots" content="all" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="author" href="humans.txt" type="text/plain" />
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bolditalic&v1' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="css/main.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="js/tipsy/stylesheets/tipsy.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/AvantGardEF_500.font.js"></script>
+    <script type="text/javascript" src="js/tipsy/javascripts/jquery.tipsy.js"></script>
+    <script type="text/javascript" src="js/jquery.seekAttention.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="js/ux.js"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-2744048-2']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+	</head>
+	<body>
+		<div id="wrapper">
+        <h1>.info file generator for Drupal themes</h1>
+        <div id="content">
+            <form id="info-data" action="#">
+                
+                <div id="top">
+                	<div id="drupal-version" class="block">
+                      <h2>Choose your Drupal version</h2>
+                      <div class="help"><a title="Which Drupal version are you using?" href="#">Help</a></div>
+                      <div class="form-item">
+                          <label>Theme's name</label>
+                          <input type="text" class="form-text" id="name">
+                          <div class="description">Don't use punctuation, accented characters, blank spaces, etc.</div>
+                      </div>
+                      <div class="form-item">
+                          <label>Theme's description</label>
+                          <textarea id="description"></textarea>
+                          <div class="description">75 characters maximum.</div>
+                      </div>
+                  </div><!-- #theme-info -->
+                </div><!-- #top -->
+                
+                <div id="col-left">
+                  <div id="theme-info" class="block">
+                      <h2>Theme's information</h2>
+                      <div class="help"><a title="Here you must to define which will be your theme's name, and to explain it shortly." href="#">Help</a></div>
+                      <div class="form-item">
+                          <label>Theme's name</label>
+                          <input type="text" class="form-text" id="name">
+                          <div class="description">Don't use punctuation, accented characters, blank spaces, etc.</div>
+                      </div>
+                      <div class="form-item">
+                          <label>Theme's description</label>
+                          <textarea id="description"></textarea>
+                          <div class="description">75 characters maximum.</div>
+                      </div>
+                  </div><!-- #theme-info -->
+                  <div id="regions" class="block">
+                      <h2>Regions</h2>
+                      <div class="help"><a title="You need to declare your theme's regions, remember that content region is required. Don't use punctuation, accented characters, blank spaces, etc." href="#">Help</a></div>
+                      <ul class="sortable">
+                          <li><input type="text" class="form-text"></li>
+                      </ul>
+                      <a class="btn-add" onclick="generate_item('regions')" href="#">Add another region</a>
+                  </div><!-- #regions -->
+               </div><!-- #col-left -->
+               
+               <div id="col-right">
+                  <div id="css" class="block">
+                      <h2>Stylesheets</h2>
+                      <div class="help"><a title="You can attach any stylesheets as you need, and re-order them." href="#">Help</a></div>
+                      <ul class="sortable">
+                          <li><input type="text" class="form-text"><label>.css</label></li>
+                      </ul>
+                      <a class="btn-add" onclick="generate_item('css')" href="#">Add another .css file</a>
+                  </div><!-- #css -->
+                  <!--div id="conditional-css" class="block right">
+                      <h2>Conditional stylesheets</h2>
+                      <p>If you need to attach an IE6 or IE7 conditional stylesheet, you need to install <a title="Conditional stylesheets in Drupal IE6 IE7" href="http://drupal.org/project/conditional_styles" target="_blank">Conditional stylesheets</a> module first and... that's all!</p>
+                      <ul>
+                          <li>
+                              <input type="checkbox" class="form-checkbox" id="ie6" name="ie6"><label for="ie6">I want to attach an IE6 stylesheet</label>
+                              <div class="description" id="description-ie6">Your IE6 stylesheet must be named "ie6.css".</div>
+                          </li>
+                          <li>
+                              <input type="checkbox" class="form-checkbox" id="ie7" name="ie7"><label for="ie7">I want to attach an IE7 stylesheet</label>
+                              <div class="description" id="description-ie7">Your IE6 stylesheet must be named "ie7.css".</div>
+                          </li>
+                      </ul>
+                  </div--><!-- #conditional-css -->
+                  <div id="js" class="block">
+                  	<h2>Javascript files</h2>
+                  	<div class="help"><a title="You can attach any javascripts as you need, and re-order them." href="#">Help</a></div>
+                      <ul class="sortable">
+                          <li><input type="text" class="form-text"><label>.js</label></li>
+                      </ul>
+                      <a class="btn-add" onclick="generate_item('js')" href="#">Add another .js file</a>
+                  </div><!-- #js -->
+                </div><!-- #col-right -->
+                
+                <a id="generate-code" onclick="return update_data()" title="Generate code" href="#">Generate code</a>
+                
+            </form>
+            <div id="wrapper-code" class="block">
+                <h2>Your .info file</h2>
+                <p>It's simple, just copy&paste this code into a new document and call it "<strong>.info</strong>", then put it in your theme's root.</p>
+                <textarea readonly="readonly" id="code"></textarea>
+            </div><!-- #wrapper-code -->
+        </div><!-- #content -->
+        <div id="footer">
+            <p>&copy;2010 · Designed and developed by <a title="Frontend Developer XHTML+CSS3 Drupal Wordpress" href="http://twitter.com/sergiocerrutti" target="_blank">Sergio Cerrutti</a>.</p>
+        </div><!-- #footer -->
+    </div><!-- #wrapper -->
+    <script type="text/javascript">Cufon.now();</script>
+	</body>
+</html>

@@ -1,0 +1,11 @@
+﻿/* ABOUT ME */
+	Name: Sergio Cerrutti
+	E-mail: info@sergiocerrutti.com
+	Website: http://sergiocerrutti.com
+	Twitter: @sergiocerrutti
+	LinkedIn: http://www.linkedin.com/in/sergiocerrutti
+	Location: Madrid, Spain.
+                    
+/* SITE */
+	Code languages: HTML4, CSS2, CSS3, JavaScript.
+	Components: jQuery.
